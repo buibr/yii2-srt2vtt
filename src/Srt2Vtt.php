@@ -39,10 +39,10 @@ class Srt2Vtt extends \yii\base\Widget
     {
         if(\is_writable($srt))
         {
-            $this->srt = $srt;
+            return $this->srt = $srt;
         }
 
-        throw new ErrorException("Srt file is not found");
+        throw new \ErrorException("Srt file is not found");
     }
 
     /**
@@ -54,16 +54,15 @@ class Srt2Vtt extends \yii\base\Widget
 
         if($att['dirname'] == '.')
         {
-            $this->vtt = $vtt;
-            return;
+            return $this->vtt = $vtt;
         }
 
         if(\is_dir($att['dirname']) )
         {
-            $this->vtt = $vtt;
+            return $this->vtt = $vtt;
         }
 
-        throw new ErrorException("Vtt file is not accessible");
+        throw new \ErrorException("Vtt file is not accessible");
     }
 
     /**
@@ -112,6 +111,11 @@ class Srt2Vtt extends \yii\base\Widget
          * 
          */
         $content = utf8_encode($content);
+
+        /**
+         * 
+         */
+        $content = str_replace('ï»¿', '', $content);
 
         /**
          * 
