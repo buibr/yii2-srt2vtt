@@ -1,0 +1,21 @@
+{
+    "name": "buibr/yii2-srt2vtt",
+    "description": "Convert SRT filest to VTT",
+    "type": "library",
+    "keywords": ["yii2","extension","movies","srt","vtt","convert"],
+    "license": "BSD-4-Clause",
+    "authors": [
+        {
+            "name": "Burhan Ibraimi",
+            "email": "burhan@wflux.pro"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "buibr\\subtitles\\": "src"
+        }
+    }
+}
